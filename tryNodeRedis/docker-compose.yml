@@ -5,6 +5,9 @@ services:
     security_opt:
       - apparmor=unconfined
   node-app:
+    # restart: "no"
+    # restart: always
+    restart: on-failure
     build: .
     ports:
       - "4001:8081"
