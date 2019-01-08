@@ -4,6 +4,9 @@ WORKDIR '/app'
 
 COPY package.json .
 RUN npm install
+
+# not necessary if everything is mounted from outside
+# but is good to have for production
 COPY . .
 
 CMD ["npm", "run", "start"]
