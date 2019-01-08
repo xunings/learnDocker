@@ -2,7 +2,11 @@ version: '3'
 services:
   redis-server:
     image: 'redis'
+    security_opt:
+      - apparmor=unconfined
   node-app:
     build: .
     ports:
       - "4001:8081"
+    security_opt:
+      - apparmor=unconfined
